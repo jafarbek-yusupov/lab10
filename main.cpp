@@ -22,6 +22,33 @@ void swps(T& a, T& b) {
 
 int n=1;
 
+template <typename T>
+int floorFunction(T num) {
+    int intPart = static_cast<int>(num); // Get the integer part
+
+    // If num is negative and not an integer, return intPart - 1
+    if (num < 0 && num != intPart) {
+        return intPart - 1;
+    }
+    return intPart; // Otherwise, return the integer part
+}
+
+template <typename T>
+int ceilingFunction(T num) {
+    int intPart = static_cast<int>(num); // Get the integer part
+
+    // If num is positive and not an integer, return intPart + 1
+    if (num > 0 && num != intPart) {
+        return intPart + 1;
+    }
+    return intPart; // Otherwise, return the integer part
+}
+int multiply(int x, int y) {
+    if (y == 0){    return 0;}
+    if (y < 0) {    return -multiply(x, -y);}
+    return x + multiply(x, y - 1);
+}
+
 int ott(int n){
     if (n==0){  cout << "0" << endl; return 0; }
     cout << n << endl;
@@ -37,6 +64,9 @@ void nats(int n){
 int main(){
     //ott(10);
     //nats(n);
+    int n, m;
+    cin >> n >> m;
+    cout << multiply(n, m) << endl;
     char a, b, c;
     cin >> a >> b >> c;
     cout << mx(a, b, c) << endl;
