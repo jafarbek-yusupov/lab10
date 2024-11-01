@@ -84,13 +84,16 @@ int sod(int n) {
     if(n/10 == 0){   return n;}
     return n%10 + sod(n/10);
 }
-
-
+//PROBLEM 11
+int pr2(int n, int m) {
+    return ((n==0 || m==0) ? 0: n + pr2(n, m-1));
+}
 
 int main(){
     cout << factorial(3) << endl;
     cout << pw(0, 3) << endl;
     cout << sod(132456) << endl;
+    cout << pr2(6, 3) << endl;
     //ott(10);
     //nats(n);
     // int n, m;
