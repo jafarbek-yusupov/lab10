@@ -60,17 +60,46 @@ void nats(int n){
     cout << n << endl;
     nats(n+1);
 }
+//PROBLEM 6
+int factorial(int n) {
+    return n == 0 ? 1 : n*factorial(n-1);
+}
+//PROBLEM 7
+int pw(int n, int pow){
+    if (n == 0 && pow == 0){ return -1;}
+    return pow == 0 ? 1 : n * pw(n, pow-1);
+}
+//PROBLEM 8
+double invSum(int n){
+    if(n==1){   return 1.;}
+    return invSum(n-1) + 1./(n*n);
+}
+//PROBLEM 9
+double prs(int n) {
+    if(n==1){   return 1./3;}
+    return prs(n-1) * 1./(n*(n+2));
+}
+//PROBLEM 10
+int sod(int n) {
+    if(n/10 == 0){   return n;}
+    return n%10 + sod(n/10);
+}
+
+
 
 int main(){
+    cout << factorial(3) << endl;
+    cout << pw(0, 3) << endl;
+    cout << sod(132456) << endl;
     //ott(10);
     //nats(n);
-    int n, m;
-    cin >> n >> m;
-    cout << multiply(n, m) << endl;
-    char a, b, c;
-    cin >> a >> b >> c;
-    cout << mx(a, b, c) << endl;
-    swp(a, b);
-    cout << a << " " << b << endl;
+    // int n, m;
+    // cin >> n >> m;
+    // cout << multiply(n, m) << endl;
+    // char a, b, c;
+    // cin >> a >> b >> c;
+    // cout << mx(a, b, c) << endl;
+    // swp(a, b);
+    // cout << a << " " << b << endl;
     return 0;
 }
